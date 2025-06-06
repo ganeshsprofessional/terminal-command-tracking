@@ -54,7 +54,9 @@ http://localhost:5173/
 
 ## ▶️ How It Works
 
-- Docker backend exposes a terminal using `ttyd`.
+- A separate node environment with node-pty is spawned upon the docker build and backend code is executed in the container.
+- With port forwarding, the frontend communicates with the backend in the container
+- The websocket server runs the commands in real time and emits the output to frontend
 - React frontend shows a terminal UI and listens for user commands.
 - Tracked commands (`ls`, `mkdir test`, `cd test`) are matched and stored in progress state.
 - UI updates in real-time to reflect user progress.
