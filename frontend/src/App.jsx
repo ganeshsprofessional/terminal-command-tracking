@@ -4,7 +4,7 @@ import Terminal from "./components/Terminal";
 const commandsToTrack = ["ls", "mkdir test", "cd test"];
 
 export default function App() {
-  const [progress, setProgress] = useState([]);
+  const [progress, setProgress] = useState(["something"]);
 
   useEffect(() => {
     console.log("Updated progress:", progress);
